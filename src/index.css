@@ -1,0 +1,61 @@
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.transition-group {
+  position: relative;
+}
+
+.slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navegación estándar: del Componente 1 al Componente 2 */
+
+.slide-enter {
+  transform: translateX(100%);
+}
+
+.slide-enter-active {
+  transform: translateX(0);
+  transition: transform 500ms;
+}
+
+.slide-exit {
+  transform: translateX(0);
+}
+
+.slide-exit-active {
+  transform: translateX(-100%);
+  transition: transform 500ms;
+}
+
+/* Navegación inversa: del Componente 2 al Componente 1 */
+
+.slider-container.prev .slide-enter {
+  transform: translateX(-100%);
+}
+
+.slider-container.prev .slide-enter-active {
+  transform: translateX(0);
+  transition: transform 500ms;
+}
+
+.slider-container.prev .slide-exit {
+  transform: translateX(0);
+}
+
+.slider-container.prev .slide-exit-active {
+  transform: translateX(100%);
+  transition: transform 500ms;
+}
